@@ -41,7 +41,7 @@ func root(w http.ResponseWriter, r *http.Request) {
     fmt.Println("no database name provided, bailing!")
     os.Exit(1)
   }
-  
+
   conn := pnthr.MongoConnection{DB_HOST: os.Getenv("DB_HOST"), DB_NAME: os.Getenv("DB_NAME")}
 
   pnthr.Server(w, r, conn)
